@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Complete guide to SSRF (Server-Side Request Forgery) with real-world examples, prevention techniques, and how to secure Node.js using ssrf-agent-guard." />
+  <meta name="keywords" content="SSRF, Server Side Request Forgery, SSRF protection, security, Node.js security, npm, ssrf module, ssrf-agent-guard" />
+  <meta name="author" content="Your Name" />
+  <title>Understanding SSRF & Preventing It Using ssrf-agent-guard</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.7; margin: 0; padding: 0; background: #fafafa; color: #222; }
+    header { background: #0a0a0a; color: #fff; padding: 30px 20px; text-align: center; }
+    h1 { margin: 0; font-size: 2.2rem; }
+    .container { max-width: 900px; margin: auto; padding: 20px; background: #fff; }
+    h2 { margin-top: 40px; color: #333; }
+    pre { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; }
+    .promo-box { margin: 30px 0; padding: 20px; background: #e8f5e9; border-left: 5px solid #4caf50; border-radius: 6px; }
+    a.button { background: #4caf50; color: #fff; padding: 10px 18px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+    footer { text-align: center; padding: 20px; margin-top: 40px; color: #666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SSRF Explained & How to Prevent It in Node.js</h1>
+    <p>Protect your apps using <strong>ssrf-agent-guard</strong></p>
+  </header>
+
+  <div class="container">
+
+    <h2>🔍 What is SSRF?</h2>
+    <p>
+      SSRF (Server-Side Request Forgery) is a vulnerability where an attacker tricks your server into making
+      requests to internal or external systems. It bypasses firewalls because <strong>your server itself</strong> becomes the attacker.
+    </p>
+
+    <pre><code>// Vulnerable Node.js example
+app.get('/fetch', async (req, res) => {
+  const url = req.query.url;
+  const data = await axios.get(url); // ❌ No validation means SSRF risk
+  res.send(data);
+});</code></pre>
+
+    <h2>🚨 Why SSRF Is Dangerous</h2>
+    <ul>
+      <li>Access to internal microservices</li>
+      <li>Access to cloud metadata services (AWS, GCP, Azure)</li>
+      <li>Bypassing firewalls and network ACLs</li>
+      <li>Leaking environment secrets</li>
+      <li>Pivoting deeper into private networks</li>
+    </ul>
+
+    <h2>🛡️ How to Prevent SSRF in Node.js</h2>
+    <p>
+      Instead of manually validating hosts, IP ranges, protocols, and DNS resolution, use a dedicated security
+      library designed to block SSRF vectors.
+    </p>
+
+    <div class="promo-box">
+      <h3>✔ The Best Solution: ssrf-agent-guard</h3>
+      <p>
+        <strong><a href="https://www.npmjs.com/package/ssrf-agent-guard">ssrf-agent-guard</a></strong> is a lightweight, plug-and-play
+        module that wraps Node.js HTTP/HTTPS agents and blocks:
+      </p>
+      <ul>
+        <li>Private IP ranges</li>
+        <li>Cloud metadata services</li>
+        <li>Loopback & LAN requests</li>
+        <li>Protocol smuggling attempts</li>
+        <li>DNS rebinding attacks</li>
+      </ul>
+      <a class="button" href="https://www.npmjs.com/package/ssrf-agent-guard">Install Now on npm</a>
+    </div>
+
+    <h2>🚀 Usage Example</h2>
+
+    <pre><code>import { createSafeAgent } from "ssrf-agent-guard";
+import axios from "axios";
+
+const agent = createSafeAgent();
+
+axios.get("http://example.com", { httpAgent: agent, httpsAgent: agent })
+  .then(res => console.log(res.data))
+  .catch(err => console.error("Blocked: ", err.message));
+</code></pre>
+
+    <h2>💡 Why You Should Use ssrf-agent-guard</h2>
+    <ul>
+      <li>Zero configuration required</li>
+      <li>Compatible with Axios, Fetch, Node core HTTP/HTTPS</li>
+      <li>Actively maintained for modern Node environments</li>
+      <li>Designed specifically to stop real-world SSRF attacks</li>
+    </ul>
+
+    <h2>📌 Final Thoughts</h2>
+    <p>
+      SSRF is one of the most dangerous and misunderstood vulnerabilities in modern backend and cloud systems.
+      A single request can expose internal networks, cloud credentials, and sensitive data.
+    </p>
+    <p>
+      Protect your application now with the easiest solution available:
+      <strong>ssrf-agent-guard</strong>.
+    </p>
+
+    <p>
+      👉 <a class="button" href="https://www.npmjs.com/package/ssrf-agent-guard">Get ssrf-agent-guard on npm</a>
+    </p>
+
+  </div>
+
+  <footer>
+    © 2025 • SSRF Security Blog • Powered by ssrf-agent-guard
+  </footer>
+</body>
+</html>
