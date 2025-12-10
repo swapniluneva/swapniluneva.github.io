@@ -12,12 +12,12 @@
   <meta property="og:title" content="Swapnil Srivastava – Software Engineer & Web Developer">
   <meta property="og:description" content="Portfolio and blog of Swapnil Srivastava: backend, cloud, security, and full-stack projects.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="path-to-your-profile-photo.jpg">
+  <meta property="og:image" content="my-photo.jpg">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Dark/Light Mode Styles -->
+  <!-- Styles -->
   <style>
     :root {
       --bg-color: #f4f7f9;
@@ -43,16 +43,21 @@
 
     /* Navbar */
     nav { position: sticky; top:0; background: var(--primary-color); display:flex; justify-content:center; z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-    nav ul { display:flex; list-style:none; padding: 10px 20px; }
+    nav ul { display:flex; list-style:none; padding: 10px 20px; align-items:center; }
     nav ul li { margin: 0 15px; }
     nav ul li a { color:#fff; text-decoration:none; font-weight:600; transition:0.3s; }
     nav ul li a:hover { color:#ffd54f; }
     .theme-toggle { cursor:pointer; margin-left: 20px; font-weight:bold; color:#fff; }
 
     /* Header */
-    header { background: linear-gradient(135deg,var(--primary-color),var(--secondary-color)); color:#fff; text-align:center; padding:80px 20px; }
+    header { background: linear-gradient(135deg,var(--primary-color),var(--secondary-color)); color:#fff; text-align:center; padding:100px 20px 60px 20px; position: relative; }
     header h1 { font-size:3rem; margin-bottom:10px; }
     header p { font-size:1.2rem; opacity:0.9; }
+
+    /* Profile Photo Section */
+    #photo { text-align:center; margin-top:-90px; }
+    #photo img { width:180px; height:180px; border-radius:50%; border:5px solid var(--secondary-color); box-shadow:0 8px 20px rgba(0,0,0,0.15); transition:0.3s; }
+    #photo img:hover { transform: scale(1.05); box-shadow:0 12px 25px rgba(0,0,0,0.25); }
 
     /* Container */
     .container { max-width:1000px; margin:40px auto; padding:0 20px; }
@@ -63,6 +68,7 @@
     section:nth-child(3) { animation-delay:0.6s; }
     section:nth-child(4) { animation-delay:0.8s; }
     section:nth-child(5) { animation-delay:1s; }
+    section:nth-child(6) { animation-delay:1.2s; }
 
     h2 { border-left:4px solid var(--primary-color); padding-left:10px; margin-bottom:20px; }
 
@@ -102,6 +108,9 @@
     /* Resume Button */
     .resume-btn { display:inline-block; padding:10px 20px; background:var(--primary-color); color:#fff; border-radius:6px; text-decoration:none; font-weight:600; transition:0.3s; }
     .resume-btn:hover { background:var(--secondary-color); }
+
+    /* Responsive */
+    @media(max-width:600px){ header h1{font-size:2.2rem;} header p{font-size:1rem;} }
   </style>
 
   <!-- Structured Data (JSON-LD) -->
@@ -145,6 +154,11 @@
     <h1>Swapnil Srivastava</h1>
     <p>Software Engineer & Web Developer | Backend | Microservices | Cloud Security</p>
   </header>
+
+  <!-- Profile Photo Section -->
+  <section id="photo">
+    <img src="your-photo.jpg" alt="Swapnil Srivastava">
+  </section>
 
   <div class="container">
 
@@ -257,5 +271,6 @@
       }
     }
   </script>
+
 </body>
 </html>
