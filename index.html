@@ -1,276 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swapnil Srivastava – Software Engineer & Web Developer</title>
-  <meta name="description" content="Swapnil Srivastava – Software Engineer specializing in backend, microservices, cloud security, and Node.js. Explore portfolio, skills, projects, and blog.">
-  <meta name="keywords" content="Swapnil Srivastava, software engineer, web developer, Node.js, microservices, cloud security, portfolio, blog, resume">
-  <meta name="author" content="Swapnil Srivastava">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swapnil Srivastava – Software Engineer & Web Developer</title>
+    <meta name="description" content="Swapnil Srivastava – Software Engineer specializing in backend, microservices, cloud security, and Node.js. Explore portfolio, skills, projects, and blog.">
+    <meta name="keywords" content="Swapnil Srivastava, software engineer, web developer, Node.js, microservices, cloud security, portfolio, blog, resume">
+    <meta name="author" content="Swapnil Srivastava">
 
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="Swapnil Srivastava – Software Engineer & Web Developer">
-  <meta property="og:description" content="Portfolio and blog of Swapnil Srivastava: backend, cloud, security, and full-stack projects.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="my-photo.png">
+    <meta property="og:title" content="Swapnil Srivastava – Software Engineer & Web Developer">
+    <meta property="og:description" content="Portfolio and blog of Swapnil Srivastava: backend, cloud, security, and full-stack projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="my-photo.png">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Styles -->
-  <style>
-    :root {
-      --bg-color: #f4f7f9;
-      --text-color: #333;
-      --primary-color: #0d47a1;
-      --secondary-color: #1976d2;
-      --card-bg: #fff;
-      --link-color: #1976d2;
-      --hover-link-color: #0d47a1;
+    <style>
+        :root {
+            --bg-color: #f4f7f9;
+            --text-color: #333;
+            --primary-color: #0d47a1; /* Deep Blue */
+            --secondary-color: #1976d2; /* Standard Blue */
+            --accent-color: #ffc107; /* Amber/Gold for highlights */
+            --card-bg: #fff;
+            --link-color: #1976d2;
+            --hover-link-color: #0d47a1;
+            --skill-badge-bg: #e3f2fd;
+        }
+        [data-theme="dark"] {
+            --bg-color: #171923; /* Darker background */
+            --text-color: #e0e0e0;
+            --primary-color: #64b5f6;
+            --secondary-color: #42a5f5;
+            --accent-color: #ffeb3b; /* Brighter accent */
+            --card-bg: #2d3748; /* Dark card */
+            --link-color: #90caf9;
+            --hover-link-color: #42a5f5;
+            --skill-badge-bg: #4a5568;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-color); color: var(--text-color); line-height:1.7; transition: background 0.5s, color 0.5s; }
+
+        /* Navbar */
+        nav { position: sticky; top:0; background: var(--card-bg); display:flex; justify-content:center; z-index:1000; box-shadow:0 1px 4px rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        nav ul { display:flex; list-style:none; padding: 15px 20px; align-items:center; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color:var(--text-color); text-decoration:none; font-weight:600; transition:0.3s; padding: 5px 0; position: relative; }
+        nav ul li a::after { content:''; position:absolute; left:0; bottom:0; width:100%; height:2px; background:var(--primary-color); transform: scaleX(0); transition: transform 0.3s; }
+        nav ul li a:hover::after { transform: scaleX(1); }
+        .theme-toggle { cursor:pointer; margin-left: 20px; font-size: 1.2rem; color: var(--primary-color); }
+        .nav-logo { font-weight: 800; font-size: 1.5rem; color: var(--primary-color); margin-right: 30px; }
+        
+        /* Header/Hero Section (Merged Header and Photo) */
+        .hero { background: var(--card-bg); padding:80px 20px 40px 20px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero img { width:150px; height:150px; border-radius:50%; object-fit: cover; border:4px solid var(--primary-color); box-shadow:0 8px 20px rgba(0,0,0,0.15); margin-bottom: 20px; transition:0.3s; }
+        .hero img:hover { transform: scale(1.05) rotate(-3deg); box-shadow:0 12px 25px rgba(0,0,0,0.25); }
+        .hero h1 { font-size:2.8rem; margin-bottom:5px; color:var(--text-color); }
+        .hero h2 { font-size:1.4rem; color:var(--primary-color); font-weight:600; margin-bottom:15px; }
+        .hero p { font-size:1.1rem; opacity:0.8; margin-bottom:20px; }
+        .hero-socials a { color: var(--text-color); margin: 0 10px; font-size: 1.5rem; transition: color 0.3s; }
+        .hero-socials a:hover { color: var(--primary-color); }
+
+        /* Container */
+        .container { max-width:1000px; margin:40px auto; padding:0 20px; }
+
+        section { margin-bottom:80px; padding: 20px 0; opacity:0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
+        /* Animation delay adjusted for the new structure */
+        section:nth-child(1) { animation-delay:0.2s; }
+        section:nth-child(2) { animation-delay:0.4s; }
+        section:nth-child(3) { animation-delay:0.6s; }
+        section:nth-child(4) { animation-delay:0.8s; }
+        section:nth-child(5) { animation-delay:1s; }
+        section:nth-child(6) { animation-delay:1.2s; }
+
+        h2 { font-size: 1.8rem; color: var(--primary-color); margin-bottom:25px; display:flex; align-items:center; }
+        h2 i { margin-right: 10px; font-size: 1.5rem; }
+
+        /* Skills */
+        ul.skills { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:10px; }
+        ul.skills li { 
+            display:inline-flex; align-items:center; margin:0; padding:8px 15px; 
+            background: var(--skill-badge-bg); color: var(--text-color); 
+            border-radius:6px; font-weight:600; font-size:0.9rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition:0.3s; 
+        }
+        ul.skills li i { margin-right: 5px; color: var(--primary-color); }
+        ul.skills li:hover { transform: translateY(-3px); background: var(--secondary-color); color: #fff; }
+        [data-theme="dark"] ul.skills li:hover { color: var(--text-color); }
+
+        /* Projects & Blog Card Style */
+        .project, .article { 
+            background: var(--card-bg); padding:25px; border-radius:12px; 
+            box-shadow:0 4px 15px rgba(0,0,0,0.08); margin-bottom:20px; 
+            transition:0.3s; border-left: 5px solid var(--secondary-color);
+        }
+        .project:hover, .article:hover { transform: translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.15); }
+        .projects h3, .blog h3 { margin-bottom:8px; color:var(--primary-color); font-size: 1.3rem; }
+        .projects p:not(:last-child) { margin-bottom: 5px; }
+        .projects .tech-badges span { display:inline-block; font-size:0.8rem; margin-right:8px; background:#e0f7fa; color:#006064; padding:3px 8px; border-radius:4px; font-weight:600; }
+        [data-theme="dark"] .projects .tech-badges span { background:#004d40; color:#80cbc4; }
+
+        /* Timeline */
+        .timeline { border-left: 4px solid var(--primary-color); margin: 0 0 20px 20px; padding-left: 20px; }
+        .timeline-item { position: relative; margin-bottom: 30px; padding-left: 20px; }
+        .timeline-item::before { content: ''; position: absolute; left: -26px; top: 5px; width: 12px; height: 12px; background: var(--primary-color); border-radius: 50%; border: 3px solid var(--bg-color); }
+        [data-theme="dark"] .timeline-item::before { border: 3px solid var(--card-bg); }
+
+        .timeline-item h4 { margin:0; color:var(--secondary-color); font-size: 1.1rem; }
+        .timeline-item p { margin:5px 0; font-size: 0.95rem; }
+
+        /* Contact */
+        .contact-info { display: flex; flex-direction: column; gap: 10px; }
+        .contact-info a { color: var(--link-color); text-decoration:none; font-weight:600; display:flex; align-items:center; }
+        .contact-info a i { margin-right: 10px; color: var(--primary-color); }
+        .contact-info a:hover { color: var(--hover-link-color); text-decoration:underline; }
+
+        /* Footer */
+        footer { text-align:center; padding:20px; font-size:0.9rem; color:var(--text-color); opacity: 0.7; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 40px; }
+
+        /* Animations */
+        @keyframes fadeInUp { to { opacity:1; transform: translateY(0); } }
+
+        /* Resume Button */
+        .resume-btn { 
+            display:inline-block; padding:12px 25px; margin-top: 10px;
+            background:var(--primary-color); color:#fff; border-radius:8px; 
+            text-decoration:none; font-weight:700; font-size:1.05rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition:0.3s; 
+        }
+        .resume-btn:hover { background:var(--secondary-color); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
+
+        /* Responsive */
+        @media(max-width:768px){ 
+            nav ul { padding: 10px 10px; }
+            nav ul li { margin: 0 8px; }
+            .hero { padding: 60px 20px 30px 20px; }
+            .hero h1{font-size:2.2rem;} 
+            .hero h2{font-size:1.2rem;}
+            .hero p{font-size:1rem;}
+            h2 { font-size: 1.6rem; }
+            .nav-logo { display: none; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Swapnil Srivastava",
+      "url": "https://your-portfolio-site.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/swapnil-srivastava-9599a883/",
+        "https://github.com/swapniluneva"
+      ],
+      "jobTitle": "Software Engineer & Web Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent / Freelance"
+      },
+      "description": "Software Engineer specializing in backend, microservices, cloud security, and Node.js.",
+      "email": "mailto:srivastava.swapnil99@gmail.com"
     }
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --primary-color: #90caf9;
-      --secondary-color: #42a5f5;
-      --card-bg: #1e1e1e;
-      --link-color: #90caf9;
-      --hover-link-color: #42a5f5;
-    }
-
-    * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg-color); color: var(--text-color); line-height:1.6; transition: background 0.3s, color 0.3s; }
-
-    /* Navbar */
-    nav { position: sticky; top:0; background: var(--primary-color); display:flex; justify-content:center; z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-    nav ul { display:flex; list-style:none; padding: 10px 20px; align-items:center; }
-    nav ul li { margin: 0 15px; }
-    nav ul li a { color:#fff; text-decoration:none; font-weight:600; transition:0.3s; }
-    nav ul li a:hover { color:#ffd54f; }
-    .theme-toggle { cursor:pointer; margin-left: 20px; font-weight:bold; color:#fff; }
-
-    /* Header */
-    header { background: linear-gradient(135deg,var(--primary-color),var(--secondary-color)); color:#fff; text-align:center; padding:100px 20px 60px 20px; position: relative; }
-    header h1 { font-size:3rem; margin-bottom:10px; }
-    header p { font-size:1.2rem; opacity:0.9; }
-
-    /* Profile Photo Section */
-    #photo { text-align:center; margin-top:-90px; }
-    #photo img { width:180px; height:180px; border-radius:50%; border:5px solid var(--secondary-color); box-shadow:0 8px 20px rgba(0,0,0,0.15); transition:0.3s; }
-    #photo img:hover { transform: scale(1.05); box-shadow:0 12px 25px rgba(0,0,0,0.25); }
-
-    /* Container */
-    .container { max-width:1000px; margin:40px auto; padding:0 20px; }
-
-    section { margin-bottom:80px; opacity:0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
-    section:nth-child(1) { animation-delay:0.2s; }
-    section:nth-child(2) { animation-delay:0.4s; }
-    section:nth-child(3) { animation-delay:0.6s; }
-    section:nth-child(4) { animation-delay:0.8s; }
-    section:nth-child(5) { animation-delay:1s; }
-    section:nth-child(6) { animation-delay:1.2s; }
-
-    h2 { border-left:4px solid var(--primary-color); padding-left:10px; margin-bottom:20px; }
-
-    /* Skills */
-    ul.skills { list-style:none; padding:0; display:flex; flex-wrap:wrap; }
-    ul.skills li { margin:5px 10px; padding:8px 15px; background: #e3f2fd; border-radius:50px; font-weight:600; transition:0.3s; }
-    [data-theme="dark"] ul.skills li { background: #333; }
-    ul.skills li:hover { transform: translateY(-3px); }
-
-    /* Projects */
-    .projects .project { background: var(--card-bg); padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:30px; transition:0.3s; }
-    .projects .project:hover { transform: translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.12); }
-    .projects .project h3 { margin-bottom:8px; color:var(--primary-color); }
-    .projects .project p a { color: var(--link-color); text-decoration:none; font-weight:600; }
-    .projects .project p a:hover { color: var(--hover-link-color); text-decoration:underline; }
-
-    /* Blog */
-    .blog .article { background: var(--card-bg); padding:20px; border-radius:12px; margin-bottom:25px; box-shadow:0 3px 10px rgba(0,0,0,0.05); transition:0.3s; }
-    .blog .article:hover { transform: translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.1); }
-
-    /* Timeline */
-    .timeline { border-left: 4px solid var(--primary-color); margin: 0 0 20px 20px; padding-left: 20px; }
-    .timeline-item { margin-bottom: 20px; }
-    .timeline-item h4 { margin:0; color:var(--primary-color); }
-    .timeline-item p { margin:5px 0; }
-
-    /* Contact */
-    .contact a { color: var(--link-color); text-decoration:none; font-weight:600; }
-    .contact a:hover { color: var(--hover-link-color); text-decoration:underline; }
-
-    /* Footer */
-    footer { text-align:center; padding:20px; font-size:0.9rem; color:#666; }
-
-    /* Animations */
-    @keyframes fadeInUp { to { opacity:1; transform: translateY(0); } }
-
-    /* Resume Button */
-    .resume-btn { display:inline-block; padding:10px 20px; background:var(--primary-color); color:#fff; border-radius:6px; text-decoration:none; font-weight:600; transition:0.3s; }
-    .resume-btn:hover { background:var(--secondary-color); }
-
-    /* Responsive */
-    @media(max-width:600px){ header h1{font-size:2.2rem;} header p{font-size:1rem;} }
-  </style>
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Swapnil Srivastava",
-    "url": "https://your-portfolio-site.com",
-    "sameAs": [
-      "https://www.linkedin.com/in/swapnil-srivastava-9599a883/",
-      "https://github.com/swapniluneva"
-    ],
-    "jobTitle": "Software Engineer & Web Developer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Independent / Freelance"
-    },
-    "description": "Software Engineer specializing in backend, microservices, cloud security, and Node.js.",
-    "email": "mailto:srivastava.swapnil99@gmail.com"
-  }
-  </script>
+    </script>
 </head>
 <body data-theme="light">
 
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="/blog/ssrf.html">Blog</a></li>
-      <li><a href="#timeline">Timeline</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li class="theme-toggle" onclick="toggleTheme()">🌙</li>
-    </ul>
-  </nav>
+    <nav>
+        <ul>
+            <li class="nav-logo">SS</li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="/blog/ssrf.html">Blog</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="theme-toggle" onclick="toggleTheme()">🌙</li>
+        </ul>
+    </nav>
 
-  <!-- Header -->
-  <header>
-    <h1>Swapnil Srivastava</h1>
-    <p>Software Engineer & Web Developer | Backend | Microservices | Cloud Security</p>
-  </header>
-
-  <!-- Profile Photo Section -->
-  <section id="photo">
-    <img src="my-photo.png" alt="Swapnil Srivastava">
-  </section>
-
-  <div class="container">
-
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I’m a passionate software engineer specializing in backend development, microservices, cloud security, and Node.js. I enjoy building scalable systems, contributing to open-source, and solving complex problems.</p>
+    <section class="hero">
+        <div class="hero-content">
+            <img src="my-photo.png" alt="Swapnil Srivastava">
+            <h1>Swapnil Srivastava</h1>
+            <h2>Software Engineering | System Design | Microservices | Cloud Security</h2>
+            <p>I’m a passionate software engineer specializing in system designing, microservices, cloud security. I enjoy building scalable systems, contributing to open-source, and solving complex problems.</p>
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/swapnil-srivastava-9599a883/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/swapniluneva" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:srivastava.swapnil99@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <ul class="skills">
-        <li>Node.js</li>
-        <li>TypeScript</li>
-        <li>Express.js</li>
-        <li>Microservices</li>
-        <li>Docker & Kubernetes</li>
-        <li>AWS / GCP</li>
-        <li>PHP / Laravel</li>
-        <li>REST & GraphQL APIs</li>
-        <li>MySQL / PostgreSQL / MongoDB</li>
-        <li>CI/CD & DevOps</li>
-      </ul>
-    </section>
+    <div class="container">
+        
+        <section id="about" style="display:none;">
+            <h2><i class="fas fa-user-circle"></i>About Me</h2>
+            <p>I’m a passionate software engineer specializing in system designing, microservices, cloud security. I enjoy building scalable systems, contributing to open-source, and solving complex problems.</p>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects & Experience</h2>
-      <div class="projects">
-        <div class="project">
-          <h3>Microservices API Platform</h3>
-          <p><strong>Role:</strong> Backend Developer • <strong>Tech:</strong> Node.js, Docker, PostgreSQL</p>
-          <p>Built scalable microservices architecture with secure APIs and cloud deployment.</p>
-          <p><a href="#">View on GitHub</a></p>
-        </div>
-        <div class="project">
-          <h3>Cloud Security Automation Tool</h3>
-          <p><strong>Role:</strong> Developer • <strong>Tech:</strong> Node.js, AWS, Terraform</p>
-          <p>Automated cloud security checks and metadata protection for deployed applications.</p>
-          <p><a href="#">View on GitHub</a></p>
-        </div>
-      </div>
-    </section>
+        <section id="skills">
+            <h2><i class="fas fa-code"></i>Technical Skills</h2>
+            <ul class="skills">
+                <li><i class="fab fa-node-js"></i>Node.js</li>
+                <li><i class="fas fa-terminal"></i>TypeScript</li>
+                <li><i class="fas fa-server"></i>Express.js</li>
+                <li><i class="fas fa-cubes"></i>Microservices</li>
+                <li><i class="fab fa-docker"></i>Docker & Kubernetes</li>
+                <li><i class="fab fa-aws"></i>AWS / GCP</li>
+                <li><i class="fab fa-php"></i>PHP / Laravel</li>
+                <li><i class="fas fa-exchange-alt"></i>REST & GraphQL APIs</li>
+                <li><i class="fas fa-database"></i>MySQL / PostgreSQL / MongoDB</li>
+                <li><i class="fas fa-cogs"></i>CI/CD & DevOps</li>
+                <li><i class="fas fa-shield-alt"></i>Cloud Security</li>
+            </ul>
+        </section>
 
-    <!-- Blog / Articles Section -->
-    <section id="blog">
-      <h2>Blog / Articles</h2>
-      <div class="blog">
-        <div class="article">
-          <h3>Understanding SSRF and Securing Node.js</h3>
-          <p>Explains Server-Side Request Forgery (SSRF), real-world examples, and how to use the <a href="https://www.npmjs.com/package/ssrf-agent-guard" target="_blank">ssrf-agent-guard</a> module.</p>
-          <p><a href="/blog/ssrf.html">Read More</a></p>
-        </div>
-        <div class="article">
-          <h3>Building Secure Microservices Architecture</h3>
-          <p>Best practices for designing and securing microservices, with CI/CD and cloud deployment strategies.</p>
-          <p><a href="#">Read More</a></p>
-        </div>
-      </div>
-    </section>
+        <section id="projects">
+            <h2><i class="fas fa-laptop-code"></i>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>RummyPassion</h3>
+                    <p>Rummy Passion is a leading real-money rummy platform in India with over 10 years of industry presence and 10+ million users. The platform supports 50,000+ concurrent players and facilitates approximately 250,000 games daily.
 
-    <!-- Timeline / Resume Section -->
-    <section id="timeline">
-      <h2>Timeline & Resume</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h4>2025 – Present</h4>
-          <p>Independent Software Engineer / Freelance – Backend, Cloud Security & Microservices</p>
-        </div>
-        <div class="timeline-item">
-          <h4>2023 – 2025</h4>
-          <p>Senior Backend Developer – Company XYZ</p>
-        </div>
-        <div class="timeline-item">
-          <h4>2020 – 2023</h4>
-          <p>Backend Developer – Company ABC</p>
-        </div>
-      </div>
-      <a class="resume-btn" href="Swapnil_Srivastava_Resume.pdf" download>Download Resume</a>
-    </section>
+It offers a secure and seamless gaming experience powered by certified RNG, advanced anti-fraud systems, fast withdrawals, 24×7 customer support, and a wide range of promotions and tournaments.</p>
+                    <p><strong>Role:</strong> Engineering Manager</p>
+                    <p class="tech-badges">
+                        <span>Nest.js</span>
+                        <span>WebSockets</span>
+                        <span>KAFKA</span>
+                        <span>AWS</span>
+                        <span>Microservice</span>
+                    </p>
+                    <p><a href="https://www.rummypassion.com/" target="_blank"><i class="fab fa-github"></i> Explore</a></p>
+                </div>
+                <div class="project">
+                    <h3>Unifyed StudentX</h3>
+                    <p>Cloud-based, AI-powered student engagement and lifecycle management platform. Serving the industry from 12+ years to it's 200+ Institutions worldwide with scalable architecture, system integrations with SIS and LMS platforms, with high performance, security, and reliability across the platform.</p>
+                    <p><strong>Role:</strong> Developer</p>
+                    <p class="tech-badges">
+                        <span>Nest.js</span>
+                        <span>Springboot</span>
+                        <span>Serverless</span>
+                        <span>Terraform</span>
+                    </p>
+                    <p><a href="https://unifyed.com/" target="_blank"><i class="fab fa-github"></i> Explore</a></p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact & Connect</h2>
-      <p>Email: <a href="mailto:your-email@example.com">srivastava.swapnil99@gmail.com</a></p>
-      <p>Phone: <a href="phone:your-email@example.com">+971-52-845-6070</a></p>
-      
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/swapnil-srivastava-9599a883/" target="_blank">linkedin.com/in/swapnil-srivastava-9599a883</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/swapniluneva</a></p>
-    </section>
+        <section id="blog">
+            <h2><i class="fas fa-newspaper"></i>Latest Articles</h2>
+            <div class="blog">
+                <div class="article">
+                    <h3>Understanding SSRF and Securing Node.js</h3>
+                    <p>Explains Server-Side Request Forgery (SSRF), real-world examples, and how to use the <a href="https://www.npmjs.com/package/ssrf-agent-guard" target="_blank">ssrf-agent-guard</a> module.</p>
+                    <p><a href="/blog/ssrf.html">Read Full Article <i class="fas fa-arrow-right"></i></a></p>
+                </div>
+            </div>
+        </section>
 
-  </div>
+        <section id="timeline">
+            <h2><i class="fas fa-history"></i>Career Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>2024 – Present</h4>
+                    <p>Independent Software Engineer / Freelance – Backend, Cloud Security & Microservices</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>2023 – 2025</h4>
+                    <p>Senior Backend Developer – Company XYZ</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>2020 – 2023</h4>
+                    <p>Backend Developer – Company ABC</p>
+                </div>
+            </div>
+            <a class="resume-btn" href="Swapnil_Srivastava_Resume.pdf" download><i class="fas fa-file-download"></i> Download Full Resume</a>
+        </section>
 
-  <footer>
-    &copy; 2025 Swapnil Srivastava — Crafted with ❤️ and modern code.
-  </footer>
+        <section id="contact">
+            <h2><i class="fas fa-id-badge"></i>Contact & Connect</h2>
+            <div class="contact-info">
+                <a href="mailto:srivastava.swapnil99@gmail.com"><i class="fas fa-envelope"></i> srivastava.swapnil99@gmail.com</a>
+                <a href="phone:+971-52-845-6070"><i class="fas fa-phone"></i> +971-52-845-6070</a>
+                <a href="https://www.linkedin.com/in/swapnil-srivastava-9599a883/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+                <a href="https://github.com/swapniluneva" target="_blank"><i class="fab fa-github"></i> GitHub Profile</a>
+            </div>
+        </section>
 
-  <!-- Dark/Light Mode Script -->
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const currentTheme = body.getAttribute('data-theme');
-      if(currentTheme === 'light') {
-        body.setAttribute('data-theme','dark');
-        document.querySelector('.theme-toggle').textContent = '☀️';
-      } else {
-        body.setAttribute('data-theme','light');
-        document.querySelector('.theme-toggle').textContent = '🌙';
-      }
-    }
-  </script>
+    </div>
+
+    <footer>
+        &copy; 2025 Swapnil Srivastava — Crafted with <span style="color:#e74c3c;">❤</span> and modern code.
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const toggleIcon = document.querySelector('.theme-toggle');
+
+            if(currentTheme === 'light') {
+                body.setAttribute('data-theme','dark');
+                toggleIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme','light');
+                toggleIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Apply theme from local storage on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            document.querySelector('.theme-toggle').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
 
 </body>
 </html>
