@@ -1,3 +1,8 @@
+---
+layout: default
+title: User Guide
+---
+
 # User Guide
 
 **Who this is for:** Everyone who uses Application day-to-day — from supervisors placing orders to facility operators running the till. No technical knowledge required.
